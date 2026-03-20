@@ -189,6 +189,9 @@ bool Server::execute()
     }
 
     // 默认是false，不需要设置
+    if (m_params.powerOffOnClose) {
+        args << QString("power_off_on_close=true");
+    }
     // args << "power_off_on_close=false";
 
     // 下面的参数都用服务端默认值即可，尽量减少参数传递，传参太长导致三星手机报错：stack corruption detected (-fstack-protector)
